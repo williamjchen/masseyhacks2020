@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <h3>Works Best if the video has proper captions and not auto-generated(doesn't really work with auto-generated). Also, it takes a bit, give it a bit of time after pressing submit :)</h3>
+            <form method="POST" action="">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="text-center">Youtube URL</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" name="fname" placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                </div>
+                {% if request.method == "POST" %}
+                    <button class="btn btn-primary" type="button" disabled>
+                        <span class="sr-only">Loading...</span>
+                    </button>
+                {% else %}
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+{% endblock content %}
